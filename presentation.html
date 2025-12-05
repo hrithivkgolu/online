@@ -2,151 +2,192 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>Q4 2025 Earnings Report | Global Finance Corp</title>
-  <meta name="description" content="Interactive Quarterly Earnings Presentation">
-  <meta name="author" content="Technical Consultant - 24f2000717@ds.study.iitm.ac.in">
-
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quarterly Earnings — Interactive Reveal.js Presentation</title>
 
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.6.0/reveal.min.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.6.0/theme/black.min.css" id="theme">
+  <!-- Reveal.js core styles -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@4.5.0/dist/reveal.css">
+  <!-- Theme (you can swap with black, white, league, solarized) -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@4.5.0/dist/theme/solarized.css" id="theme">
 
-  <!-- Syntax highlighting -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.6.0/plugin/highlight/monokai.min.css">
+  <!-- Highlight.js for code highlighting (used by Reveal's highlight plugin) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/default.min.css">
 
   <style>
-    .reveal .contact { font-size: 0.6em; color: #666; margin-top: 40px; }
-    .reveal .big-equation { font-size: 1.4em; }
-    .reveal section img { border: none; box-shadow: none; background: none; }
+    /* Small custom styling */
+    .footer-email {
+      position: absolute;
+      right: 20px;
+      bottom: 10px;
+      font-size: 0.9rem;
+      opacity: 0.85;
+    }
+    .logo-title {
+      font-weight: 700;
+      letter-spacing: 0.02em;
+    }
+    /* Make fragments animate slightly smoother */
+    .fragment {
+      transition: opacity 300ms ease, transform 300ms ease;
+    }
   </style>
 </head>
-
 <body>
+
   <div class="reveal">
     <div class="slides">
 
-      <!-- Title Slide -->
+      <!-- Title slide -->
       <section>
-        <h1>Q4 2025 Earnings Report</h1>
-        <h3>Global Finance Corporation</h3>
-        <p><small>Presented by Technical Consultant</small></p>
-        <p class="contact">Contact: <a href="mailto:24f2000717@ds.study.iitm.ac.in">24f2000717@ds.study.iitm.ac.in</a></p>
-        <p><small>December 2025</small></p>
+        <h1 class="logo-title">Quarterly Earnings — Q3</h1>
+        <h3>Financial Institution — Stakeholder Presentation</h3>
+        <p>Prepared by: Technical Consulting</p>
+        <p class="footer-email">Contact: 24f2000717@ds.study.iitm.ac.in</p>
+        <aside class="notes">
+          Introduce the team, set expectations for the 20-minute walkthrough. Mention that detailed model outputs are available after the live session.
+        </aside>
       </section>
 
-      <!-- Markdown Slide -->
+      <!-- Markdown slide (demonstrates data in markdown) -->
       <section data-markdown>
-        <textarea data-template>
-          ## Financial Highlights — Q4 2025
+        <script type="text/template">
 
-          - **Revenue**: $18.7B ↑ 23% YoY
-          - **Net Income**: $4.9B ↑ 31% YoY
-          - **EPS**: $2.81 (beat estimates by $0.18)
-          - **Operating Margin**: 31.2% (+420 bps)
-          - **Free Cash Flow**: $6.1B
+# Executive Highlights (Markdown)
 
-          > Record quarter driven by Digital Banking and Wealth Management growth
-        </textarea>
+- **Revenue (QoQ):** +6.2%  
+- **Net Interest Margin:** 2.85%  
+- **Cost-to-Income Ratio:** 48%  
+
+> This slide was authored in **Markdown** — demonstrates flexible content editing for stakeholders.
+
+1. Action Item: Approve incremental budget for digital initiatives.
+2. Action Item: Review risk-weighted asset assumptions.
+
+        </script>
+        <aside class="notes">
+          Use this slide to demonstrate how content can be edited quickly by non-developers using plain Markdown.
+        </aside>
       </section>
 
-      <!-- Animated Fragments Slide -->
+      <!-- Flow/Animated fragments slide -->
       <section>
-        <h2>Key Growth Drivers</h2>
+        <h2>Customer Conversion Funnel (Animated)</h2>
         <ul>
-          <li class="fragment fade-in">Digital customer acquisition: <strong>+2.4M</strong> new accounts</li>
-          <li class="fragment fade-in">Wealth Management AUM: <strong>$1.42T</strong> (+18% YoY)</li>
-          <li class="fragment fade-in">Institutional trading volume: <strong>+37%</strong></li>
-          <li class="fragment highlight-blue">AI-powered fraud detection saved <strong>$184M</strong> in potential losses</li>
-          <li class="fragment fade-up" data-fragment-index="4">Launch of <em>NeoInvest</em> robo-advisor platform</li>
+          <li class="fragment">Awareness — 120,000</li>
+          <li class="fragment">Interest — 45,200</li>
+          <li class="fragment">Consideration — 18,900</li>
+          <li class="fragment">Application — 6,300</li>
+          <li class="fragment">Purchase / Onboarded — 2,850</li>
         </ul>
+        <aside class="notes">
+          Progress through each fragment to reveal funnel counts. Emphasize drop-off points and conversion opportunities.
+        </aside>
       </section>
 
-      <!-- Code Sample Slide -->
+      <!-- Code sample slide with syntax highlighting -->
       <section>
-        <h2>Risk-Adjusted Return Calculation (Python)</h2>
-        <pre><code class="hljs python" data-trim data-line-numbers="|1,2-4|6-9|11">
-import numpy as np
-import pandas as pd
+        <h2>Sample: NPV Calculation (Python)</h2>
+        <pre><code data-trim class="language-python">def npv(cashflows, discount_rate):
+    """Compute net present value for a stream of cashflows.
 
-# Sample portfolio returns and benchmark
-returns = pd.Series(np.random.normal(0.001, 0.02, 252))  # Daily returns
-benchmark = pd.Series(np.random.normal(0.0008, 0.015, 252))
+    cashflows: list of numbers (CF0, CF1, CF2, ...)
+    discount_rate: decimal (eg. 0.05 for 5%)
+    """
+    return sum(cf / ((1 + discount_rate) ** n) for n, cf in enumerate(cashflows))
 
-# Sharpe Ratio (annualized)
-risk_free = 0.042
-sharpe = (returns.mean() - risk_free/252) / returns.std() * np.sqrt(252)
-
-print(f"Annualized Sharpe Ratio: {sharpe:.2f}")
-        </code></pre>
-        <p class="fragment">Live calculation in our internal analytics platform</p>
+# Example
+cashflows = [-100000, 30000, 40000, 50000, 45000]
+print("NPV:", npv(cashflows, 0.08))
+</code></pre>
+        <aside class="notes">
+          Walk through how NPV is coded and which assumptions (discount rate, horizon) drive sensitivity.
+        </aside>
       </section>
 
-      <!-- Mathematical Equations Slide -->
+      <!-- Mathematical equations slide -->
       <section>
-        <h2>Core Financial Formulas</h2>
-
-        <div class="big-equation">
-          <p>Black-Scholes Option Pricing:</p>
-          $$ C = S_0 N(d_1) - K e^{-rT} N(d_2) $$<br>
-          where<br>
-          $$ d_1 = \frac{\ln(S_0/K) + (r + \sigma^2/2)T}{\sigma\sqrt{T}} $$
-          $$ d_2 = d_1 - \sigma\sqrt{T} $$
-        </div>
-
-        <div class="fragment big-equation" style="margin-top: 60px;">
-          <p>Value at Risk (Parametric):</p>
-          $$ \text{VaR}_\alpha = -\left( \mu_p + z_\alpha \sigma_p \right) \cdot V $$
-        </div>
+        <h2>Key Financial Formulas</h2>
+        <p>
+          Present Value of a future cashflow:
+        </p>
+        <p>
+          $$PV = \frac{CF}{(1 + r)^n}$$
+        </p>
+        <p class="fragment">
+          Net Present Value of a stream: 
+        </p>
+        <p class="fragment">
+          $$NPV = \sum_{t=0}^{T} \frac{CF_t}{(1 + r)^t}$$
+        </p>
+        <aside class="notes">
+          Explain the interpretation of discount rate r and horizon T. Tie to enterprise WACC and scenario analysis.
+        </aside>
       </section>
 
-      <!-- Chart Placeholder (you can replace with real charts) -->
+      <!-- Slide showing JavaScript snippet and fragment animation -->
       <section>
-        <h2>Revenue Growth Trajectory</h2>
-        <img src="https://via.placeholder.com/900x550/1e2a44/ffffff?text=Revenue+Growth+Chart+Q4+2025" alt="Revenue Growth>
-        <p class="fragment">Compound Annual Growth Rate (CAGR) 2022–2025: <strong>21.8%</strong></p>
+        <h2>Realtime KPI Widget (JS)</h2>
+        <pre><code data-trim class="language-js">// Fetch KPI from internal API and update the dashboard
+async function fetchKPI() {
+  const resp = await fetch('/api/v1/kpi');
+  const data = await resp.json();
+  document.getElementById('kpi-value').textContent = data.kpi;
+}
+
+setInterval(fetchKPI, 30_000); // refresh every 30s
+</code></pre>
+
+        <p id="kpi-value" class="fragment">(Live KPI will appear here during demo)</p>
+        <aside class="notes">
+          This slide demonstrates embedding code samples and describing how the live dashboard updates work. Clarify security and API throttling concerns.
+        </aside>
       </section>
 
-      <!-- Final Slide -->
+      <!-- Closing slide -->
       <section>
-        <h2>Thank You</h2>
-        <p>Global Finance Corporation is positioned for continued leadership in digital finance.</p>
-        <br>
-        <p><strong>Questions?</strong></p>
-        <p class="contact">24f2000717@ds.study.iitm.ac.in</p>
+        <h2>Questions & Next Steps</h2>
+        <ol>
+          <li class="fragment">Approve Q4 budget reallocations</li>
+          <li class="fragment">Run stress test with alternative macro scenarios</li>
+          <li class="fragment">Schedule deep-dive with risk team</li>
+        </ol>
+        <p class="footer-email">Contact: 24f2000717@ds.study.iitm.ac.in</p>
+        <aside class="notes">
+          End with clear asks and an invitation for follow-up sessions. Provide stakeholders with the deck and the raw data repository link.
+        </aside>
       </section>
 
     </div>
   </div>
 
-  <!-- Reveal.js -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.6.0/reveal.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.6.0/plugin/markdown/markdown.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.6.0/plugin/highlight/highlight.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.6.0/plugin/notes/notes.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.6.0/plugin/math/math.min.js"></script>
+  <!-- Reveal core JS -->
+  <script src="https://cdn.jsdelivr.net/npm/reveal.js@4.5.0/dist/reveal.min.js"></script>
+  <!-- Plugins -->
+  <script src="https://cdn.jsdelivr.net/npm/reveal.js@4.5.0/plugin/markdown/markdown.esm.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/reveal.js@4.5.0/plugin/highlight/highlight.esm.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/reveal.js@4.5.0/plugin/notes/notes.esm.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/reveal.js@4.5.0/plugin/math/math.esm.js"></script>
+
+  <!-- MathJax for rendering LaTeX (used by the math plugin) -->
+  <script>
+    window.MathJax = {
+      tex: { inlineMath: [['$','$'], ['\\(','\\)']] },
+      svg: { fontCache: 'global' }
+    };
+  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.js" integrity="" crossorigin="anonymous"></script>
 
   <script>
+    // Initialize Reveal with plugins
     Reveal.initialize({
       hash: true,
-      controls: true,
-      progress: true,
-      center: true,
-      transition: 'slide',
-      plugins: [ RevealMarkdown, RevealHighlight, RevealNotes, RevealMath.KaTeX ]
+      slideNumber: true,
+      plugins: [ RevealMarkdown, RevealHighlight, RevealNotes, RevealMath ],
+      // Configure math plugin to use MathJax 3
+      math: {
+        mathjax: 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.js'
+      }
     });
   </script>
-
-  <!-- Speaker Notes (visible with 'S' key in presentation mode) -->
-  <aside class="notes">
-    <p>Slide 1: Introduce yourself and thank the audience.</p>
-    <p>Slide 2: Let the markdown render — highlight the record revenue beat.</p>
-    <p>Slide 3: Reveal each growth driver one by one. Emphasize AI fraud savings.</p>
-    <p>Slide 4: Explain that this code runs nightly on our risk platform.</p>
-    <p>Slide 5: Briefly explain how we use these models in derivatives and risk management.</p>
-    <p>Slide 6: Mention upcoming analyst deep-dive on digital revenue streams.</p>
-    <p>Slide 7: Open floor for questions. Have backup slides ready on capital ratios.</p>
-  </aside>
 </body>
 </html>
