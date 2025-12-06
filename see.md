@@ -6,7 +6,8 @@ math: mathjax
 backgroundImage: url('https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=1920&h=1080&fit=crop')
 backgroundSize: cover
 
-
+header: 'Header content'
+footer: 'Footer content'
 ---
 
 
@@ -20,9 +21,8 @@ backgroundSize: cover
 # Product Documentation
 ### Awesome Software v2.4
 
-
 ---
-
+<!-- _class: lead -->
 # This slide has a background image  
 (guaranteed visible)
 
