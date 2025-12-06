@@ -18,7 +18,8 @@ style: |
 
 
 ---
-<!-- backgroundColor: aqua -->
+<!-- _backgroundImage: url('45FA21E0-CE2C-42C4-8446-FB127D3B061D_1_105_c.jpeg') -->
+<!-- backgroundColor: white -->
 This page has aqua background.
 
 ---
@@ -27,9 +28,6 @@ This page has aqua background.
 ### Product Documentation v2.4 | Q4 2025
 
 ---
-
-<!-- This slide uses REAL Marp directives (not just ![bg]) -->
-<!-- backgroundImage, backgroundPosition, backgroundSize, backgroundColor are all official Marp directives -->
 
 <!-- _backgroundImage: url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=1920&h=1080&fit=crop') -->
 <!-- _backgroundPosition: center -->
