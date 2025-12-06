@@ -1,117 +1,110 @@
 ---
 marp: true
-theme: uncover
+theme: gaia
 paginate: true
-math: mathjax
-footer: 'Contact: 24f2000717@ds.study.iitm.ac.in'
+paginator: true
+page_number: true
+math: katex
+header: "Product Documentation"
+footer: "Contact: 24f2000717@ds.study.iitm.ac.in"
+class: invert
+size: 16:9
+
+# Global custom styling
+style: |
+  section {
+    font-family: "Helvetica Neue", Arial, sans-serif;
+    color: #2d3748;
+  }
+  h1, h2, h3 {
+    color: #2b6cb0;
+    font-weight: 700;
+  }
+  footer {
+    font-size: 0.75rem;
+    color: #718096;
+  }
+  code {
+    background: #f7fafc;
+    padding: 2px 6px;
+    border-radius: 4px;
+  }
 ---
 
-<style>
-:root {
-  --marp-brand-color: #007bff; /* Custom blue accent */
-  --marp-background-color: #f8f9fa; /* Light background */
-}
+<!-- Title slide with background image -->
+![bg](https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=1920&h=1080&fit=crop)
 
-section {
-  font-family: 'Arial', sans-serif;
-  color: #333;
-}
+# Our Awesome Software  
+Product Documentation
 
-h1, h2 {
-  color: var(--marp-brand-color);
-}
-
-footer {
-  font-size: 0.8em;
-  color: #666;
-  text-align: right;
-  padding-right: 20px;
-}
-</style>
-
-<!-- _class: lead -->
-# Product Documentation
-
-## Our Awesome Software
-
-Prepared by: Technical Writer
-
----
-
-# Overview
-
-- Introduction to the software
-- Key benefits
-- Target audience
-
-This documentation provides comprehensive guidance on using Our Awesome Software, a powerful tool for [describe briefly].
+**Version 2.4** | Q4 2025  
+Technical Writer
 
 ---
 
-# Features
+# Agenda
 
-1. **Feature 1**: Description of feature 1.
-2. **Feature 2**: Description of feature 2 with details.
-3. **Feature 3**: Advanced capabilities.
+1. Overview & Architecture
+2. Key Features
+3. Performance & Algorithmic Complexity
+4. Installation & Quick Start
+5. API Reference
+6. Frequently Asked Questions
 
-<!-- Custom local styling for this slide -->
-<style scoped>
-section {
-  background-color: #e9ecef;
-}
-ul {
-  font-size: 1.2em;
-}
-</style>
+---
+
+# Core Features
+
+- **Real-time data processing**
+- **End-to-end encryption**
+- **Scalable microservices architecture**
+- **99.99% uptime SLA**
+
+> Built for enterprises that demand reliability and speed.
 
 ---
 
 # Algorithmic Complexity
 
-Our sorting algorithm achieves efficient performance:
+Our core sorting engine uses **Timsort**-inspired hybrid algorithm.
 
-The time complexity is given by:
+$$
+\begin{aligned}
+\text{Best case:}    \quad & \Omega(n) \\
+\text{Average case:} \quad & \Theta(n \log n) \\
+\text{Worst case:}   \quad & O(n \log n)
+\end{aligned}
+$$
 
-$$ T(n) = O(n \log n) $$
-
-Where \( n \) is the number of elements.
-
-This ensures scalability for large datasets.
-
-For space complexity:
+Auxiliary space complexity:
 
 $$ S(n) = O(n) $$
 
 ---
 
-<!-- backgroundImage: url('https://image.slidesdocs.com/responsive-images/background/abstract-technology-software-development-using-programming-code-powerpoint-background_ad12933809__960_540.jpg') -->
-<!-- _class: invert --> <!-- Custom class for inverted colors to ensure readability on background -->
+<!-- Slide with a different beautiful background image -->
+![bg opacity: 0.25
+![bg](https://images.unsplash.com/photo-1518432031352-d6fc5c10da5a?w=1920&h=1080&fit=crop)
 
-# Demo Slide with Background
+# Performance Benchmarks
 
-This slide demonstrates a background image for visual appeal.
-
-- Point 1: Visual enhancement
-- Point 2: Relevant imagery
-
-<style scoped>
-section {
-  color: #fff; /* White text for dark background */
-}
-h1, h2 {
-  color: #fff;
-}
-</style>
+| Dataset Size | Time (ms) | Memory (MB) | Compared to Python sorted() |
+|--------------|-----------|-------------|-----------------------------|
+| 100K         | 12        | 8.4         | **2.8× faster**             |
+| 1M           | 145       | 92          | **3.1× faster**             |
+| 10M          | 1,680     | 980         | **3.4× faster**             |
 
 ---
 
-# Conclusion
+# Quick Start Guide
 
-- Summary of key points
-- Next steps
-- Contact for questions
+```bash
+# 1. Install via pip
+pip install awesome-software==2.4.1
 
-Thank you!
-
-<grok-card data-id="504895" data-type="image_card"></grok-card>
-
+# 2. Import and run
+python -c "
+from awesome import AwesomeProcessor
+p = AwesomeProcessor()
+p.run()
+"
