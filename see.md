@@ -2,14 +2,13 @@
 marp: true
 theme: default
 paginate: true
+math: mathjax
 backgroundImage: url('https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=1920&h=1080&fit=crop')
 backgroundSize: cover
+
+
 ---
 
-
-# Title Slide
-
----
 
 <!-- backgroundImage: url('https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=1920&h=1080&fit=crop') -->
 # Second Slide
