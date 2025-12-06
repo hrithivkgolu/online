@@ -4,12 +4,18 @@ theme: gaia
 paginate: true
 page_number: true
 math: katex
+backgroundImage: url('https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=1920&h=1080&fit=crop')
 footer: "Contact: 24f2000717@ds.study.iitm.ac.in"
 size: 16:9
 ---
+<!--
+backgroundImage: url('https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=1920&h=1080&fit=crop')
+backgroundSize: cover
+-->
 
 # Product Documentation
 ### Awesome Software v2.4
+
 
 ---
 
