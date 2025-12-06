@@ -29,10 +29,16 @@ style: |
     padding: 2px 6px;
     border-radius: 4px;
   }
+  /* Ensure backgrounds don't overpower text */
+  section::before {
+    background-color: rgba(0, 0, 0, 0.3);
+  }
 ---
 
 <!-- Title slide with background image -->
-![bg](https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=1920&h=1080&fit=crop)
+<!-- backgroundImage: url('https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=1920&h=1080&fit=crop') -->
+<!-- backgroundOpacity: 0.8 -->
+<!-- backgroundColor: #000 -->
 
 # Our Awesome Software  
 Product Documentation
@@ -82,9 +88,10 @@ $$ S(n) = O(n) $$
 
 ---
 
-<!-- Slide with a different beautiful background image -->
-![bg opacity: 0.25
-![bg](https://images.unsplash.com/photo-1518432031352-d6fc5c10da5a?w=1920&h=1080&fit=crop)
+<!-- Slide with a different reliable background image -->
+<!-- backgroundImage: url('https://images.unsplash.com/photo-1518432031352-d6fc5c10da5a?w=1920&h=1080&fit=crop') -->
+<!-- backgroundOpacity: 0.25 -->
+<!-- backgroundColor: #f0f8ff -->
 
 # Performance Benchmarks
 
