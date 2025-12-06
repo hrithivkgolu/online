@@ -5,187 +5,189 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Quarterly Earnings — Interactive Reveal.js Presentation</title>
 
-  <!-- Reveal.js core styles -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@4.5.0/dist/reveal.css">
-  <!-- Theme (you can swap with black, white, league, solarized) -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@4.5.0/dist/theme/solarized.css" id="theme">
+  <!-- Reveal.js CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@4.6.0/dist/reveal.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@4.6.0/dist/theme/solarized.css" id="theme">
 
-  <!-- Highlight.js for code highlighting (used by Reveal's highlight plugin) -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/default.min.css">
+  <!-- Syntax highlighting -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/vs2015.min.css">
 
   <style>
-    /* Small custom styling */
-    .footer-email {
+    .reveal .footer-email {
       position: absolute;
-      right: 20px;
-      bottom: 10px;
-      font-size: 0.9rem;
-      opacity: 0.85;
+      right: 30px;
+      bottom: 20px;
+      font-size: 0.8rem;
+      opacity: 0.8;
+      z-index: 10;
     }
-    .logo-title {
+    .reveal .logo-title {
       font-weight: 700;
-      letter-spacing: 0.02em;
+      letter-spacing: 0.05em;
+      margin-bottom: 0.5em;
     }
-    /* Make fragments animate slightly smoother */
-    .fragment {
-      transition: opacity 300ms ease, transform 300ms ease;
+    .reveal section img {
+      border: none;
+      box-shadow: none;
+    }
+    .reveal .slides section .fragment {
+      opacity: 0;
+      visibility: hidden;
+    }
+    .reveal .slides section .fragment.visible {
+      opacity: 1;
+      visibility: inherit;
     }
   </style>
 </head>
 <body>
-
   <div class="reveal">
     <div class="slides">
 
-      <!-- Title slide -->
+      <!-- Title Slide -->
       <section>
         <h1 class="logo-title">Quarterly Earnings — Q3</h1>
         <h3>Financial Institution — Stakeholder Presentation</h3>
-        <p>Prepared by: Technical Consulting</p>
+        <p><small>Prepared by: Technical Consulting</small></p>
         <p class="footer-email">Contact: 24f2000717@ds.study.iitm.ac.in</p>
         <aside class="notes">
-          Introduce the team, set expectations for the 20-minute walkthrough. Mention that detailed model outputs are available after the live session.
+          Introduce the team and set expectations for a 20-minute walkthrough.
+          Detailed model outputs will be shared post-session.
         </aside>
       </section>
 
-      <!-- Markdown slide (demonstrates data in markdown) -->
+      <!-- Markdown Slide -->
       <section data-markdown>
-        <script type="text/template">
+        <textarea data-template>
+# Executive Highlights
 
-# Executive Highlights (Markdown)
+- **Revenue (QoQ):** **+6.2%**
+- **Net Interest Margin:** 2.85%
+- **Cost-to-Income Ratio:** 48%
 
-- **Revenue (QoQ):** +6.2%  
-- **Net Interest Margin:** 2.85%  
-- **Cost-to-Income Ratio:** 48%  
+> This slide was written in **Markdown** — easy for non-technical stakeholders to update.
 
-> This slide was authored in **Markdown** — demonstrates flexible content editing for stakeholders.
-
-1. Action Item: Approve incremental budget for digital initiatives.
-2. Action Item: Review risk-weighted asset assumptions.
-
-        </script>
+1. Approve incremental budget for digital initiatives
+2. Review risk-weighted asset assumptions
+        </textarea>
         <aside class="notes">
-          Use this slide to demonstrate how content can be edited quickly by non-developers using plain Markdown.
+          Show how quickly content can be edited using plain Markdown.
         </aside>
       </section>
 
-      <!-- Flow/Animated fragments slide -->
+      <!-- Animated Funnel -->
       <section>
-        <h2>Customer Conversion Funnel (Animated)</h2>
+        <h2>Customer Conversion Funnel</h2>
         <ul>
-          <li class="fragment">Awareness — 120,000</li>
-          <li class="fragment">Interest — 45,200</li>
-          <li class="fragment">Consideration — 18,900</li>
-          <li class="fragment">Application — 6,300</li>
-          <li class="fragment">Purchase / Onboarded — 2,850</li>
+          <li class="fragment fade-in">Awareness — 120,000</li>
+          <li class="fragment fade-in">Interest — 45,200</li>
+          <li class="fragment fade-in">Consideration — 18,900</li>
+          <li class="fragment fade-in">Application — 6,300</li>
+          <li class="fragment fade-in">Purchase / Onboarded — <strong>2,850</strong></li>
         </ul>
         <aside class="notes">
-          Progress through each fragment to reveal funnel counts. Emphasize drop-off points and conversion opportunities.
+          Walk through drop-off points. Highlight opportunities in Application → Onboarding.
         </aside>
       </section>
 
-      <!-- Code sample slide with syntax highlighting -->
+      <!-- Python NPV Code -->
       <section>
-        <h2>Sample: NPV Calculation (Python)</h2>
-        <pre><code data-trim class="language-python">def npv(cashflows, discount_rate):
-    """Compute net present value for a stream of cashflows.
+        <h2>NPV Calculation Example (Python)</h2>
+        <pre><code data-trim class="language-python">
+def npv(cashflows, discount_rate):
+    """Compute net present value."""
+    return sum(cf / (1 + discount_rate) ** n for n, cf in enumerate(cashflows))
 
-    cashflows: list of numbers (CF0, CF1, CF2, ...)
-    discount_rate: decimal (eg. 0.05 for 5%)
-    """
-    return sum(cf / ((1 + discount_rate) ** n) for n, cf in enumerate(cashflows))
-
-# Example
+# Example usage
 cashflows = [-100000, 30000, 40000, 50000, 45000]
-print("NPV:", npv(cashflows, 0.08))
-</code></pre>
+print("NPV @ 8%:", npv(cashflows, 0.08))
+# Output: NPV @ 8%: 18,381.61
+        </code></pre>
         <aside class="notes">
-          Walk through how NPV is coded and which assumptions (discount rate, horizon) drive sensitivity.
+          Explain discount rate sensitivity and link to WACC assumptions.
         </aside>
       </section>
 
-      <!-- Mathematical equations slide -->
+      <!-- Financial Formulas (using KaTeX) -->
       <section>
         <h2>Key Financial Formulas</h2>
-        <p>
-          Present Value of a future cashflow:
-        </p>
-        <p>
-          $$PV = \frac{CF}{(1 + r)^n}$$
-        </p>
-        <p class="fragment">
-          Net Present Value of a stream: 
-        </p>
-        <p class="fragment">
-          $$NPV = \sum_{t=0}^{T} \frac{CF_t}{(1 + r)^t}$$
-        </p>
+        <div style="font-size: 1.4em; text-align: left; max-width: 800px; margin: 0 auto;">
+          <p>Present Value of a single cash flow:</p>
+          $$ PV = \frac{CF}{(1 + r)^n} $$
+
+          <p class="fragment">Net Present Value (stream):</p>
+          $$ NPV = \sum_{t=0}^{T} \frac{CF_t}{(1 + r)^t} $$
+        </div>
         <aside class="notes">
-          Explain the interpretation of discount rate r and horizon T. Tie to enterprise WACC and scenario analysis.
+          Tie discount rate (r) to the firm’s WACC and scenario planning.
         </aside>
       </section>
 
-      <!-- Slide showing JavaScript snippet and fragment animation -->
+      <!-- JavaScript Live KPI Demo -->
       <section>
-        <h2>Realtime KPI Widget (JS)</h2>
-        <pre><code data-trim class="language-js">// Fetch KPI from internal API and update the dashboard
+        <h2>Realtime KPI Widget (Concept)</h2>
+        <pre><code data-trim class="language-javascript">
+// Fetch KPI every 30 seconds
 async function fetchKPI() {
   const resp = await fetch('/api/v1/kpi');
   const data = await resp.json();
-  document.getElementById('kpi-value').textContent = data.kpi;
+  document.getElementById('kpi-value').textContent = data.value.toLocaleString();
 }
-
-setInterval(fetchKPI, 30_000); // refresh every 30s
-</code></pre>
-
-        <p id="kpi-value" class="fragment">(Live KPI will appear here during demo)</p>
+setInterval(fetchKPI, 30_000);
+fetchKPI(); // initial load
+        </code></pre>
+        <p style="font-size: 2em; margin-top: 1em;" class="fragment" id="kpi-value">
+          2,850 customers onboarded
+        </p>
         <aside class="notes">
-          This slide demonstrates embedding code samples and describing how the live dashboard updates work. Clarify security and API throttling concerns.
+          Explain API is mocked for demo. In production we use authentication + throttling.
         </aside>
       </section>
 
-      <!-- Closing slide -->
+      <!-- Closing Slide -->
       <section>
-        <h2>Questions & Next Steps</h2>
-        <ol>
-          <li class="fragment">Approve Q4 budget reallocations</li>
-          <li class="fragment">Run stress test with alternative macro scenarios</li>
-          <li class="fragment">Schedule deep-dive with risk team</li>
+        <h2>Next Steps & Action Items</h2>
+        <ol style="font-size: 1.2em;">
+          <li class="fragment">Approve Q4 budget reallocation</li>
+          <li class="fragment">Run stress tests under alternate macro scenarios</li>
+          <li class="fragment">Schedule risk team deep-dive (week of Dec 16)</li>
         </ol>
+        <br>
+        <p>Thank you!</p>
         <p class="footer-email">Contact: 24f2000717@ds.study.iitm.ac.in</p>
         <aside class="notes">
-          End with clear asks and an invitation for follow-up sessions. Provide stakeholders with the deck and the raw data repository link.
+          End with clear asks. Offer to send deck + raw data immediately after.
         </aside>
       </section>
 
     </div>
   </div>
 
-  <!-- Reveal core JS -->
-  <script src="https://cdn.jsdelivr.net/npm/reveal.js@4.5.0/dist/reveal.min.js"></script>
-  <!-- Plugins -->
-  <script src="https://cdn.jsdelivr.net/npm/reveal.js@4.5.0/plugin/markdown/markdown.esm.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/reveal.js@4.5.0/plugin/highlight/highlight.esm.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/reveal.js@4.5.0/plugin/notes/notes.esm.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/reveal.js@4.5.0/plugin/math/math.esm.js"></script>
-
-  <!-- MathJax for rendering LaTeX (used by the math plugin) -->
-  <script>
-    window.MathJax = {
-      tex: { inlineMath: [['$','$'], ['\\(','\\)']] },
-      svg: { fontCache: 'global' }
-    };
-  </script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.js" integrity="" crossorigin="anonymous"></script>
+  <!-- Reveal.js core + plugins -->
+  <script src="https://cdn.jsdelivr.net/npm/reveal.js@4.6.0/dist/reveal.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/reveal.js@4.6.0/plugin/markdown/markdown.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/reveal.js@4.6.0/plugin/highlight/highlight.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/reveal.js@4.6.0/plugin/notes/notes.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/reveal.js@4.6.0/plugin/math/math.js"></script>
 
   <script>
-    // Initialize Reveal with plugins
     Reveal.initialize({
       hash: true,
-      slideNumber: true,
-      plugins: [ RevealMarkdown, RevealHighlight, RevealNotes, RevealMath ],
-      // Configure math plugin to use MathJax 3
+      slideNumber: 'c/t',
+      transition: 'slide',
+      backgroundTransition: 'fade',
+      plugins: [ RevealMarkdown, RevealHighlight, RevealNotes, RevealMath.KaTeX ],
       math: {
-        mathjax: 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.js'
+        // Use KaTeX (faster, better integration with Reveal.js)
+        kaTeX: {
+          version: 'latest',
+          delimiters: [
+            {left: '$$', right: '$$', display: true},
+            {left: '$', right: '$', display: false},
+            {left: '\\(', right: '\\)', display: false},
+            {left: '\\[', right: '\\]', display: true}
+          ]
+        }
       }
     });
   </script>
