@@ -12,9 +12,15 @@ footer: "Contact: 24f2000717@ds.study.iitm.ac.in"
 style: |
   section { font-family: "Segoe UI", system-ui, sans-serif; }
   h1, h2 { color: #1a56db; }
-  code { background: #eff6ff; padding: 2px 8px; border-radius: 6px; }
+  code { background: #ef6ff; padding: 2px 8px; border-radius: 6px; }
 
 # Local directive example will be used on one slide
+
+
+---
+<!-- backgroundColor: aqua -->
+This page has aqua background.
+
 ---
 
 # Our Awesome Software
